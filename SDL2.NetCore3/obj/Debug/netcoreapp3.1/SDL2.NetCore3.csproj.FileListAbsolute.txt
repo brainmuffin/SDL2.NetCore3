@@ -1,0 +1,9 @@
+/Users/bryonlape/Documents/Programming/DotNet/SDL2.NetCore3/SDL2.NetCore3/obj/Debug/netcoreapp3.1/SDL2.NetCore3.csprojAssemblyReference.cache
+/Users/bryonlape/Documents/Programming/DotNet/SDL2.NetCore3/SDL2.NetCore3/obj/Debug/netcoreapp3.1/SDL2.NetCore3.AssemblyInfoInputs.cache
+/Users/bryonlape/Documents/Programming/DotNet/SDL2.NetCore3/SDL2.NetCore3/obj/Debug/netcoreapp3.1/SDL2.NetCore3.AssemblyInfo.cs
+/Users/bryonlape/Documents/Programming/DotNet/SDL2.NetCore3/SDL2.NetCore3/obj/Debug/netcoreapp3.1/SDL2.NetCore3.csproj.CoreCompileInputs.cache
+/Users/bryonlape/Documents/Programming/DotNet/SDL2.NetCore3/SDL2.NetCore3/bin/Debug/netcoreapp3.1/SDL2.NetCore3.deps.json
+/Users/bryonlape/Documents/Programming/DotNet/SDL2.NetCore3/SDL2.NetCore3/bin/Debug/netcoreapp3.1/SDL2.NetCore3.dll
+/Users/bryonlape/Documents/Programming/DotNet/SDL2.NetCore3/SDL2.NetCore3/bin/Debug/netcoreapp3.1/SDL2.NetCore3.pdb
+/Users/bryonlape/Documents/Programming/DotNet/SDL2.NetCore3/SDL2.NetCore3/obj/Debug/netcoreapp3.1/SDL2.NetCore3.dll
+/Users/bryonlape/Documents/Programming/DotNet/SDL2.NetCore3/SDL2.NetCore3/obj/Debug/netcoreapp3.1/SDL2.NetCore3.pdb
