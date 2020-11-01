@@ -86,6 +86,7 @@ namespace CreateWindow
             var color = new SDL_pixels.SDL_Color { r = 255, g = 255, b = 255, a = 255 };
             var surface = SDL_ttf.TTF_RenderText_Solid(font,
                 message, color);
+            
             SDL_ttf.TTF_CloseFont(font);
             SDL_ttf.TTF_Quit();
             

@@ -8,18 +8,15 @@ namespace SDL2.NetCore3
         [StructLayout(LayoutKind.Sequential)]
         public struct SDL_Point
         {
-
             public int x;
             public int y;
-
         }
+        
         [StructLayout(LayoutKind.Sequential)]
         public struct SDL_Rect
         {
-
             public int x, y;
             public int w, h;
-
         }
 
         private delegate SDL_bool SDL_HasIntersection_SDL_Rect_SDL_Rect_t(ref SDL_Rect A, ref SDL_Rect B);

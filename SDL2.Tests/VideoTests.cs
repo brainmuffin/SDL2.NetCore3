@@ -60,5 +60,44 @@ namespace SDL2.Tests
             
             SDL_DestroyWindow(window);
         }
+        
+        [Fact]
+        public void CreateWindowGetId()
+        {
+            var window = SDL_CreateWindow("", SDL_WINDOWPOS_CENTERED_MASK,
+                SDL_WINDOWPOS_CENTERED_MASK, 600, 600, 0);
+            
+            Assert.NotEqual(IntPtr.Zero, window);
+
+            var winId = SDL_GetWindowID(window);
+            
+            Assert.True(winId > 0);
+            
+            SDL_DestroyWindow(window);
+        }
+        
+        [Fact]
+        public void FindWindowById()
+        {
+            var window1 = SDL_CreateWindow("First Window", SDL_WINDOWPOS_CENTERED_MASK,
+                SDL_WINDOWPOS_CENTERED_MASK, 600, 600, 0);
+            
+            Assert.NotEqual(IntPtr.Zero, window1);
+            
+            var window2 = SDL_CreateWindow("Second Window", SDL_WINDOWPOS_CENTERED_MASK,
+                SDL_WINDOWPOS_CENTERED_MASK, 600, 600, 0);
+            
+            Assert.NotEqual(IntPtr.Zero, window2);
+
+            var winId = SDL_GetWindowID(window1);
+            var fetchedWindow = SDL_GetWindowFromID(winId);
+            
+            Assert.True(winId > 0);
+            Assert.NotEqual(window1, window2);
+            Assert.Equal(window1, fetchedWindow);
+            
+            SDL_DestroyWindow(window1);
+            SDL_DestroyWindow(window2);
+        }
     }
 }

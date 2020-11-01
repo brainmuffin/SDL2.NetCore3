@@ -18,48 +18,41 @@ namespace SDL2.NetCore3
         [Flags]
         public enum SDL_WindowFlags
         {
-            SDL_WINDOW_FULLSCREEN = 0x00000001,         /**< fullscreen window */
-            SDL_WINDOW_OPENGL = 0x00000002,             /**< window usable with OpenGL context */
-            SDL_WINDOW_SHOWN = 0x00000004,              /**< window is visible */
-            SDL_WINDOW_HIDDEN = 0x00000008,             /**< window is not visible */
-            SDL_WINDOW_BORDERLESS = 0x00000010,         /**< no window decoration */
-            SDL_WINDOW_RESIZABLE = 0x00000020,          /**< window can be resized */
-            SDL_WINDOW_MINIMIZED = 0x00000040,          /**< window is minimized */
-            SDL_WINDOW_MAXIMIZED = 0x00000080,          /**< window is maximized */
-            SDL_WINDOW_INPUT_GRABBED = 0x00000100,      /**< window has grabbed input focus */
-            SDL_WINDOW_INPUT_FOCUS = 0x00000200,        /**< window has input focus */
-            SDL_WINDOW_MOUSE_FOCUS = 0x00000400,        /**< window has mouse focus */
+            SDL_WINDOW_FULLSCREEN = 0x00000001,         /** fullscreen window */
+            SDL_WINDOW_OPENGL = 0x00000002,             /** window usable with OpenGL context */
+            SDL_WINDOW_SHOWN = 0x00000004,              /** window is visible */
+            SDL_WINDOW_HIDDEN = 0x00000008,             /** window is not visible */
+            SDL_WINDOW_BORDERLESS = 0x00000010,         /** no window decoration */
+            SDL_WINDOW_RESIZABLE = 0x00000020,          /** window can be resized */
+            SDL_WINDOW_MINIMIZED = 0x00000040,          /** window is minimized */
+            SDL_WINDOW_MAXIMIZED = 0x00000080,          /** window is maximized */
+            SDL_WINDOW_INPUT_GRABBED = 0x00000100,      /** window has grabbed input focus */
+            SDL_WINDOW_INPUT_FOCUS = 0x00000200,        /** window has input focus */
+            SDL_WINDOW_MOUSE_FOCUS = 0x00000400,        /** window has mouse focus */
             SDL_WINDOW_FULLSCREEN_DESKTOP = (SDL_WINDOW_FULLSCREEN | 0x00001000),
-            SDL_WINDOW_FOREIGN = 0x00000800,            /**< window not created by SDL */
-            SDL_WINDOW_ALLOW_HIGHDPI = 0x00002000       /**< window should be created in high-DPI mode if supported */
+            SDL_WINDOW_FOREIGN = 0x00000800,            /** window not created by SDL */
+            SDL_WINDOW_ALLOW_HIGHDPI = 0x00002000       /** window should be created in high-DPI mode if supported */
         }
         public enum SDL_WindowEventID
         {
-
-            SDL_WINDOWEVENT_NONE,           /**< Never used */
-            SDL_WINDOWEVENT_SHOWN,          /**< Window has been shown */
-            SDL_WINDOWEVENT_HIDDEN,         /**< Window has been hidden */
-            SDL_WINDOWEVENT_EXPOSED,        /**< Window has been exposed and should be
-                                         redrawn */
-            SDL_WINDOWEVENT_MOVED,          /**< Window has been moved to data1, data2
-                                     */
-            SDL_WINDOWEVENT_RESIZED,        /**< Window has been resized to data1xdata2 */
-            SDL_WINDOWEVENT_SIZE_CHANGED,   /**< The window size has changed, either as a result of an API call or through the system or user changing the window size. */
-            SDL_WINDOWEVENT_MINIMIZED,      /**< Window has been minimized */
-            SDL_WINDOWEVENT_MAXIMIZED,      /**< Window has been maximized */
-            SDL_WINDOWEVENT_RESTORED,       /**< Window has been restored to normal size
-                                         and position */
-            SDL_WINDOWEVENT_ENTER,          /**< Window has gained mouse focus */
-            SDL_WINDOWEVENT_LEAVE,          /**< Window has lost mouse focus */
-            SDL_WINDOWEVENT_FOCUS_GAINED,   /**< Window has gained keyboard focus */
-            SDL_WINDOWEVENT_FOCUS_LOST,     /**< Window has lost keyboard focus */
-            SDL_WINDOWEVENT_CLOSE           /**< The window manager requests that the
-                                         window be closed */
-
+            SDL_WINDOWEVENT_NONE,           /** Never used */
+            SDL_WINDOWEVENT_SHOWN,          /** Window has been shown */
+            SDL_WINDOWEVENT_HIDDEN,         /** Window has been hidden */
+            SDL_WINDOWEVENT_EXPOSED,        /** Window has been exposed and should be redrawn */
+            SDL_WINDOWEVENT_MOVED,          /** Window has been moved to data1, data2 */
+            SDL_WINDOWEVENT_RESIZED,        /** Window has been resized to data1xdata2 */
+            SDL_WINDOWEVENT_SIZE_CHANGED,   /** The window size has changed, either as a result of an API call or through the system or user changing the window size. */
+            SDL_WINDOWEVENT_MINIMIZED,      /** Window has been minimized */
+            SDL_WINDOWEVENT_MAXIMIZED,      /** Window has been maximized */
+            SDL_WINDOWEVENT_RESTORED,       /** Window has been restored to normal size and position */
+            SDL_WINDOWEVENT_ENTER,          /** Window has gained mouse focus */
+            SDL_WINDOWEVENT_LEAVE,          /** Window has lost mouse focus */
+            SDL_WINDOWEVENT_FOCUS_GAINED,   /** Window has gained keyboard focus */
+            SDL_WINDOWEVENT_FOCUS_LOST,     /** Window has lost keyboard focus */
+            SDL_WINDOWEVENT_CLOSE           /** The window manager requests that the window be closed */
         }
         public enum SDL_GLattr
         {
-
             SDL_GL_RED_SIZE,
             SDL_GL_GREEN_SIZE,
             SDL_GL_BLUE_SIZE,
@@ -102,11 +95,11 @@ namespace SDL2.NetCore3
         [StructLayout(LayoutKind.Sequential)]
         public struct SDL_DisplayMode
         {
-            public UInt32 format;              /**< pixel format */
-            public int w;                      /**< width */
-            public int h;                      /**< height */
-            public int refresh_rate;           /**< refresh rate (or zero for unspecified) */
-            public IntPtr driverdata;           /**< driver-specific data, initialize to 0 */
+            public readonly UInt32 format;              /** pixel format */
+            public int w;                      /** width */
+            public int h;                      /** height */
+            public int refresh_rate;           /** refresh rate (or zero for unspecified) */
+            public IntPtr driverdata;           /** driver-specific data, initialize to 0 */
 
             public override string ToString() => $"{w}x{h} - {refresh_rate} Hz";
 
@@ -217,23 +210,17 @@ namespace SDL2.NetCore3
 
         public static uint SDL_GetWindowPixelFormat(IntPtr window) => s_SDL_GetWindowPixelFormat_IntPtr_t(window);
 
-        private delegate IntPtr SDL_CreateWindow_IntPtr_int_int_int_int_UInt32_t(IntPtr title, int x, int y, int w, int h, UInt32 flags);
-
-        private static SDL_CreateWindow_IntPtr_int_int_int_int_UInt32_t s_SDL_CreateWindow_IntPtr_int_int_int_int_UInt32_t = __LoadFunction<SDL_CreateWindow_IntPtr_int_int_int_int_UInt32_t>("SDL_CreateWindow");
-
-        public static IntPtr SDL_CreateWindow(string title, int x, int y, int w, int h, UInt32 flags) => s_SDL_CreateWindow_IntPtr_int_int_int_int_UInt32_t(Util.StringToHGlobalUTF8(title), x, y, w, h, flags);
-
-        private delegate IntPtr SDL_CreateWindowFrom_IntPtr_t(IntPtr data);
-
-        private static SDL_CreateWindowFrom_IntPtr_t s_SDL_CreateWindowFrom_IntPtr_t = __LoadFunction<SDL_CreateWindowFrom_IntPtr_t>("SDL_CreateWindowFrom");
-
+        private delegate IntPtr SdlCreateWindow(IntPtr title, int x, int y, int w, int h, UInt32 flags);
+        private static readonly SdlCreateWindow SSdlCreateWindowIntPtrIntIntIntIntUInt32T = __LoadFunction<SdlCreateWindow>("SDL_CreateWindow");
+        public static IntPtr SDL_CreateWindow(string title, int x, int y, int w, int h, UInt32 flags) => SSdlCreateWindowIntPtrIntIntIntIntUInt32T(Util.StringToHGlobalUTF8(title), x, y, w, h, flags);
+        
+        private delegate IntPtr SdlCreateWindowFromIntPtrT(IntPtr data);
+        private static SdlCreateWindowFromIntPtrT s_SDL_CreateWindowFrom_IntPtr_t = __LoadFunction<SdlCreateWindowFromIntPtrT>("SDL_CreateWindowFrom");
         public static IntPtr SDL_CreateWindowFrom(IntPtr data) => s_SDL_CreateWindowFrom_IntPtr_t(data);
 
-        private delegate uint SDL_GetWindowID_IntPtr_t(IntPtr window);
-
-        private static SDL_GetWindowID_IntPtr_t s_SDL_GetWindowID_IntPtr_t = __LoadFunction<SDL_GetWindowID_IntPtr_t>("SDL_GetWindowID");
-
-        public static uint SDL_GetWindowID(IntPtr window) => s_SDL_GetWindowID_IntPtr_t(window);
+        private delegate uint SdlGetWindowId(IntPtr window);
+        private static readonly SdlGetWindowId SSdlGetWindowId = __LoadFunction<SdlGetWindowId>("SDL_GetWindowID");
+        public static uint SDL_GetWindowID(IntPtr window) => SSdlGetWindowId(window);
 
         private delegate IntPtr SDL_GetWindowFromID_UInt32_t(UInt32 id);
 
