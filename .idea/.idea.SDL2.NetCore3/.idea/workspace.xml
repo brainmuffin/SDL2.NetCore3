@@ -8,31 +8,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f031ac28-9404-4221-a9cc-a53b4973f3e4" name="Default Changelist" comment="First commit">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SDL2.NetCore3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SDL2.NetCore3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreateWindow/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CreateWindow/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreateWindow/bin/Debug/netcoreapp3.1/CreateWindow.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CreateWindow/bin/Debug/netcoreapp3.1/CreateWindow.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreateWindow/bin/Debug/netcoreapp3.1/CreateWindow.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CreateWindow/bin/Debug/netcoreapp3.1/CreateWindow.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreateWindow/bin/Debug/netcoreapp3.1/SDL2.NetCore3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CreateWindow/bin/Debug/netcoreapp3.1/SDL2.NetCore3.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreateWindow/bin/Debug/netcoreapp3.1/SDL2.NetCore3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CreateWindow/bin/Debug/netcoreapp3.1/SDL2.NetCore3.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreateWindow/obj/Debug/netcoreapp3.1/CreateWindow.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/CreateWindow/obj/Debug/netcoreapp3.1/CreateWindow.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreateWindow/obj/Debug/netcoreapp3.1/CreateWindow.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CreateWindow/obj/Debug/netcoreapp3.1/CreateWindow.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreateWindow/obj/Debug/netcoreapp3.1/CreateWindow.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CreateWindow/obj/Debug/netcoreapp3.1/CreateWindow.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDL2.NetCore3/SDL_rect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SDL2.NetCore3/SDL_rect.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDL2.NetCore3/SDL_video.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SDL2.NetCore3/SDL_video.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDL2.NetCore3/bin/Debug/netcoreapp3.1/SDL2.NetCore3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SDL2.NetCore3/bin/Debug/netcoreapp3.1/SDL2.NetCore3.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDL2.NetCore3/bin/Debug/netcoreapp3.1/SDL2.NetCore3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SDL2.NetCore3/bin/Debug/netcoreapp3.1/SDL2.NetCore3.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDL2.NetCore3/obj/Debug/netcoreapp3.1/SDL2.NetCore3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SDL2.NetCore3/obj/Debug/netcoreapp3.1/SDL2.NetCore3.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDL2.NetCore3/obj/Debug/netcoreapp3.1/SDL2.NetCore3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SDL2.NetCore3/obj/Debug/netcoreapp3.1/SDL2.NetCore3.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDL2.Tests/VideoTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SDL2.Tests/VideoTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDL2.Tests/bin/Debug/netcoreapp3.1/SDL2.NetCore3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SDL2.Tests/bin/Debug/netcoreapp3.1/SDL2.NetCore3.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDL2.Tests/bin/Debug/netcoreapp3.1/SDL2.NetCore3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SDL2.Tests/bin/Debug/netcoreapp3.1/SDL2.NetCore3.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDL2.Tests/bin/Debug/netcoreapp3.1/SDL2.Tests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SDL2.Tests/bin/Debug/netcoreapp3.1/SDL2.Tests.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDL2.Tests/bin/Debug/netcoreapp3.1/SDL2.Tests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SDL2.Tests/bin/Debug/netcoreapp3.1/SDL2.Tests.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDL2.Tests/obj/Debug/netcoreapp3.1/SDL2.Tests.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SDL2.Tests/obj/Debug/netcoreapp3.1/SDL2.Tests.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDL2.Tests/obj/Debug/netcoreapp3.1/SDL2.Tests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SDL2.Tests/obj/Debug/netcoreapp3.1/SDL2.Tests.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDL2.Tests/obj/Debug/netcoreapp3.1/SDL2.Tests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SDL2.Tests/obj/Debug/netcoreapp3.1/SDL2.Tests.pdb" afterDir="false" />
-    </list>
+    <list default="true" id="f031ac28-9404-4221-a9cc-a53b4973f3e4" name="Default Changelist" comment="Tests for Get Window&#10;Formatting updates" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,7 +100,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604095988639</updated>
       <workItem from="1604096014362" duration="13219000" />
-      <workItem from="1604148743559" duration="17096000" />
+      <workItem from="1604148743559" duration="17405000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1604187422785</created>
@@ -133,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604187422785</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Tests for Get Window&#10;Formatting updates">
+      <created>1604193284616</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604193284616</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +163,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="First commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
+    <MESSAGE value="Tests for Get Window&#10;Formatting updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tests for Get Window&#10;Formatting updates" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1778" y="583" key="Github.ShareDialog" timestamp="1604187240170">
@@ -328,6 +312,10 @@
       <screen x="0" y="23" width="2560" height="1339" />
     </state>
     <state x="1374" y="123" width="1082" height="1113" key="VCS.FileHistoryDialog/0.23.2560.1339@0.23.2560.1339" timestamp="1604192859734" />
+    <state x="1515" y="419" key="Vcs.Push.Dialog.v2" timestamp="1604193334093">
+      <screen x="0" y="23" width="2560" height="1339" />
+    </state>
+    <state x="1515" y="419" key="Vcs.Push.Dialog.v2/0.23.2560.1339@0.23.2560.1339" timestamp="1604193334093" />
     <state x="1596" y="327" width="672" height="678" key="search.everywhere.popup" timestamp="1604168278332">
       <screen x="0" y="23" width="2560" height="1342" />
     </state>
