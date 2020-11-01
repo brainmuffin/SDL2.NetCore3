@@ -6,6 +6,12 @@ A library of mappings for the SDL2 libraries written against .Net Core 3. This i
 
 # Project is still in Development Phase
 
+#NuGet Dependencies
+NativeLibraryLoader
+
+#Testing Dependencies
+XUnit
+
 # Supported Platforms
 Windows, Linux, macOS
 
