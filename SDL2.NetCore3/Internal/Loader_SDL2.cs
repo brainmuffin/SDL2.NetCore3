@@ -10,8 +10,9 @@ namespace SDL2.NetCore3.Internal
         private static NativeLibrary _sdl2;
         private static NativeLibrary _sdl2Mixer;
         private static NativeLibrary _sdl2Tff;
+        private static NativeLibrary _sdl2Image;
 
-        internal static NativeLibrary Sdl2
+        private static NativeLibrary Sdl2
         {
             get
             {
@@ -38,6 +39,16 @@ namespace SDL2.NetCore3.Internal
                 if (_sdl2Tff == null)
                     _sdl2Tff = LoadSDLTff();
                 return _sdl2Tff;
+            }
+        }
+        
+        internal static NativeLibrary SdlImage
+        {
+            get
+            {
+                if (_sdl2Image == null)
+                    _sdl2Image = LoadSDLImage();
+                return _sdl2Image;
             }
         }
 
@@ -83,6 +94,22 @@ namespace SDL2.NetCore3.Internal
                     "libSDL2_ttf.so",
                     "libSDL2_ttf-2.0.so.0.14.1",
                     "libSDL2_ttf-2.0.so"
+                }
+            );
+        
+        static NativeLibrary LoadSDLImage() =>
+            TryLoad(
+                windows: new[] { 
+                    "SDL2_image.dll"
+                },
+                osx: new[] {
+                    "libSDL2_image.dylib",
+                    "SDL2_image"
+                },
+                linux: new[] {
+                    "libSDL2_image.so",
+                    "libSDL2_image-2.0.5so",
+                    "libSDL2_image-2.0.so"
                 }
             );
 
