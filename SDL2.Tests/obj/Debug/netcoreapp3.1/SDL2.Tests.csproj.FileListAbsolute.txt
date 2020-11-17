@@ -99,3 +99,4 @@
 /Users/bryonlape/Documents/Programming/DotNet/SDL2.NetCore3/SDL2.Tests/obj/Debug/netcoreapp3.1/SDL2.Tests.dll
 /Users/bryonlape/Documents/Programming/DotNet/SDL2.NetCore3/SDL2.Tests/obj/Debug/netcoreapp3.1/SDL2.Tests.pdb
 /Users/bryonlape/Documents/Programming/DotNet/SDL2.NetCore3/SDL2.Tests/obj/Debug/netcoreapp3.1/SDL2.Tests.genruntimeconfig.cache
+/Users/bryonlape/Documents/Programming/DotNet/SDL2.NetCore3/SDL2.Tests/bin/Debug/netcoreapp3.1/Hi.png

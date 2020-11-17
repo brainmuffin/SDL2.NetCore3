@@ -216,23 +216,20 @@ namespace SDL2.NetCore3
         [StructLayout(LayoutKind.Sequential)]
         public struct SDL_Color
         {
-
             public byte r;
             public byte g;
             public byte b;
             public byte a;
-
         }
         [StructLayout(LayoutKind.Sequential)]
         public struct SDL_Palette
         {
-
             public int ncolors;
             public IntPtr colors;
             public UInt32 version;
             public int refcount;
-
         }
+        
         [StructLayout(LayoutKind.Sequential)]
         public struct SDL_PixelFormat
         {

@@ -17,4 +17,10 @@
       <ProjectReference Include="..\SDL2.NetCore3\SDL2.NetCore3.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="Hi.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

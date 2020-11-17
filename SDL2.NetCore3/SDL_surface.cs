@@ -78,7 +78,6 @@ namespace SDL2.NetCore3
 
             /** Reference count -- used when freeing surface */
             int refcount;               /**< Read-mostly */
-
         }
 
         private delegate IntPtr SDL_CreateRGBSurface_uint_int_int_int_uint_uint_uint_uint_t(uint flags, int width, int height, int depth, uint rmask, uint gmask, uint bmask, uint amask);

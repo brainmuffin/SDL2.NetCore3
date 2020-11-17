@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.InteropServices;
 
 using SDL2.NetCore3.Internal;
 
@@ -7,6 +6,7 @@ namespace SDL2.NetCore3.Extensions
 {
     public static class SDL_ttf
     {
+        public static string TTF_GetError() => SDL_error.SDL_GetError();
         private delegate void TTF_Linked_Version__t();
         private static TTF_Linked_Version__t s_TTF_Linked_Version__t = __LoadFunction<TTF_Linked_Version__t>("TTF_Linked_Version");
         public static void TTF_Linked_Version() => s_TTF_Linked_Version__t();
