@@ -39,6 +39,51 @@ namespace SDL2.NetCore3
             public SDL_WindowEvent window;
             [FieldOffset(0)]
             public SDL_KeyboardEvent key;
+            [FieldOffset(0)]
+            public SDL_TextEditingEvent edit;      /**< Text editing event data */
+            [FieldOffset(0)]
+            public SDL_TextInputEvent text;        /**< Text input event data */
+            [FieldOffset(0)]
+            public SDL_MouseMotionEvent motion;    /**< Mouse motion event data */
+            [FieldOffset(0)]
+            public SDL_MouseButtonEvent button;    /**< Mouse button event data */
+            [FieldOffset(0)]
+            public SDL_MouseWheelEvent wheel;      /**< Mouse wheel event data */
+            [FieldOffset(0)]
+            public SDL_JoyAxisEvent jaxis;         /**< Joystick axis event data */
+            [FieldOffset(0)]
+            public SDL_JoyBallEvent jball;         /**< Joystick ball event data */
+            [FieldOffset(0)]
+            public SDL_JoyHatEvent jhat;           /**< Joystick hat event data */
+            [FieldOffset(0)]
+            public SDL_JoyButtonEvent jbutton;     /**< Joystick button event data */
+            [FieldOffset(0)]
+            public SDL_JoyDeviceEvent jdevice;     /**< Joystick device change event data */
+            [FieldOffset(0)]
+            public SDL_ControllerAxisEvent caxis;      /**< Game Controller axis event data */
+            [FieldOffset(0)]
+            public SDL_ControllerButtonEvent cbutton;  /**< Game Controller button event data */
+            [FieldOffset(0)]
+            public SDL_ControllerDeviceEvent cdevice;  /**< Game Controller device event data */
+            [FieldOffset(0)]
+            public SDL_AudioDeviceEvent adevice;   /**< Audio device event data */
+            [FieldOffset(0)]
+            public SDL_SensorEvent sensor;         /**< Sensor event data */
+            [FieldOffset(0)]
+            public SDL_QuitEvent quit;             /**< Quit request event data */
+            [FieldOffset(0)]
+            public SDL_UserEvent user;             /**< Custom event data */
+            [FieldOffset(0)]
+            public SDL_SysWMEvent syswm;           /**< System dependent window event data */
+            [FieldOffset(0)]
+            public SDL_TouchFingerEvent tfinger;   /**< Touch finger event data */
+            [FieldOffset(0)]
+            public SDL_MultiGestureEvent mgesture; /**< Gesture event data */
+            [FieldOffset(0)]
+            public SDL_DollarGestureEvent dgesture; /**< Gesture event data */
+            [FieldOffset(0)]
+            public SDL_DropEvent drop;             /**< Drag and drop event data */
+            
             [FieldOffset(4)]
             public unsafe fixed byte data[52];
 
@@ -152,7 +197,6 @@ namespace SDL2.NetCore3
         [StructLayout(LayoutKind.Sequential)]
         public struct SDL_CommonEvent
         {
-
             public UInt32 type;
             public UInt32 timestamp;
 
@@ -177,7 +221,6 @@ namespace SDL2.NetCore3
         [StructLayout(LayoutKind.Sequential)]
         public struct SDL_WindowEvent
         {
-
             public UInt32 type;        /**< ::SDL_WINDOWEVENT */
             public UInt32 timestamp;
             public UInt32 windowID;    /**< The associated window */
@@ -479,10 +522,22 @@ namespace SDL2.NetCore3
             public static unsafe implicit operator SDL_CommonEvent(SDL_ControllerDeviceEvent e) =>
                *((SDL_CommonEvent*)&e);
         }
+        
+        [StructLayout(LayoutKind.Sequential)]
+        public struct SDL_AudioDeviceEvent
+        {
+            public UInt32 type;        /**< ::SDL_AUDIODEVICEADDED, or ::SDL_AUDIODEVICEREMOVED */
+            public UInt32 timestamp;   /**< In milliseconds, populated using SDL_GetTicks() */
+            public UInt32 which;       /**< The audio device index for the ADDED event (valid until next SDL_GetNumAudioDevices() call), SDL_AudioDeviceID for the REMOVED event */
+            public byte iscapture;    /**< zero if an output device, non-zero if a capture device. */
+            public byte padding1;
+            public byte padding2;
+            public byte padding3;
+        }
+        
         [StructLayout(LayoutKind.Sequential)]
         public struct SDL_TouchFingerEvent
         {
-
             public UInt32 type;        /**< ::SDL_FINGERMOTION or ::SDL_FINGERDOWN or ::SDL_FINGERUP */
             public UInt32 timestamp;
             public SDL_TouchID touchId; /**< The touch device id */
@@ -544,10 +599,10 @@ namespace SDL2.NetCore3
             public static unsafe implicit operator SDL_CommonEvent(SDL_DollarGestureEvent e) =>
                *((SDL_CommonEvent*)&e);
         }
+        
         [StructLayout(LayoutKind.Sequential)]
         public struct SDL_DropEvent
         {
-
             public UInt32 type;        /**< ::SDL_DROPFILE */
             public UInt32 timestamp;
             public IntPtr file;         /**< The file name, which should be freed with SDL_free() */
@@ -560,10 +615,19 @@ namespace SDL2.NetCore3
             public static unsafe implicit operator SDL_CommonEvent(SDL_DropEvent e) =>
                *((SDL_CommonEvent*)&e);
         }
+        
+        [StructLayout(LayoutKind.Sequential)]
+        public struct SDL_SensorEvent
+        {
+            public UInt32 type;        /**< ::SDL_SENSORUPDATE */
+            public UInt32 timestamp;   /**< In milliseconds, populated using SDL_GetTicks() */
+            public UInt32 which;       /**< The instance ID of the sensor */
+            public unsafe fixed float data[6];      /**< Up to 6 values from the sensor - additional values can be queried using SDL_SensorGetData() */
+        }
+        
         [StructLayout(LayoutKind.Sequential)]
         public struct SDL_QuitEvent
         {
-
             public UInt32 type;        /**< ::SDL_QUIT */
             public UInt32 timestamp;
 
@@ -575,6 +639,7 @@ namespace SDL2.NetCore3
             public static unsafe implicit operator SDL_CommonEvent(SDL_QuitEvent e) =>
                *((SDL_CommonEvent*)&e);
         }
+        
         [StructLayout(LayoutKind.Sequential)]
         public struct SDL_OSEvent
         {
