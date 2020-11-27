@@ -1,9 +1,10 @@
 using System;
 using System.Runtime.InteropServices;
-
+using SDL2.NetCore3.Internal;
 using static SDL2.NetCore3.SDL_blendmode;
 using static SDL2.NetCore3.SDL_pixels;
 using static SDL2.NetCore3.SDL_rect;
+using static SDL2.NetCore3.SDL_rwops;
 
 using SDL_RWops = System.IntPtr;
 using SDL_bool = System.Int32;
@@ -116,11 +117,10 @@ namespace SDL2.NetCore3
 
         public static void SDL_UnlockSurface(IntPtr surface) => s_SDL_UnlockSurface_SDL_Surface_t(surface);
 
-        private delegate IntPtr SDL_LoadBMP_RW_SDL_RWops_int_t(IntPtr src, int freesrc);
-
-        private static SDL_LoadBMP_RW_SDL_RWops_int_t s_SDL_LoadBMP_RW_SDL_RWops_int_t = __LoadFunction<SDL_LoadBMP_RW_SDL_RWops_int_t>("SDL_LoadBMP_RW");
-
+        private delegate IntPtr SdlLoadBmpRwSdlRWopsIntT(IntPtr src, int freesrc);
+        private static readonly SdlLoadBmpRwSdlRWopsIntT s_SDL_LoadBMP_RW_SDL_RWops_int_t = __LoadFunction<SdlLoadBmpRwSdlRWopsIntT>("SDL_LoadBMP_RW");
         public static IntPtr SDL_LoadBMP_RW(IntPtr src, int freesrc) => s_SDL_LoadBMP_RW_SDL_RWops_int_t(src, freesrc);
+        public static IntPtr SDL_LoadBMP(string filename) => SDL_LoadBMP_RW(SDL_RWFromFile(Util.StringToHGlobalUTF8(filename), Util.StringToHGlobalUTF8("rb")), 1);
 
         private delegate int SDL_SetSurfaceRLE_SDL_Surface_int_t(IntPtr surface, int flag);
 
@@ -186,7 +186,7 @@ namespace SDL2.NetCore3
 
         private static SDL_GetClipRect_SDL_Surface_SDL_Rect_t s_SDL_GetClipRect_SDL_Surface_SDL_Rect_t = __LoadFunction<SDL_GetClipRect_SDL_Surface_SDL_Rect_t>("SDL_GetClipRect");
 
-        public unsafe static void SDL_GetClipRect(IntPtr surface, SDL_Rect* rect) => s_SDL_GetClipRect_SDL_Surface_SDL_Rect_t(surface, rect);
+        public static unsafe void SDL_GetClipRect(IntPtr surface, SDL_Rect* rect) => s_SDL_GetClipRect_SDL_Surface_SDL_Rect_t(surface, rect);
 
         private delegate int SDL_ConvertPixels_int_int_UInt32_IntPtr_int_UInt32_IntPtr_int_t(int width, int height, UInt32 src_format, IntPtr src, int src_pitch, UInt32 dst_format, IntPtr dst, int dst_pitch);
 
@@ -200,19 +200,19 @@ namespace SDL2.NetCore3
 
         private static SDL_BlitScaled_IntPtr_SDL_Rect_IntPtr_SDL_Rect_t s_SDL_BlitScaled_IntPtr_SDL_Rect_IntPtr_SDL_Rect_t;
 
-        public unsafe static int SDL_BlitScaled(IntPtr src, SDL_Rect* srcrect, IntPtr dst, SDL_Rect* dstrect) => s_SDL_BlitScaled_IntPtr_SDL_Rect_IntPtr_SDL_Rect_t(src, srcrect, dst, dstrect);
+        public static unsafe int SDL_BlitScaled(IntPtr src, SDL_Rect* srcrect, IntPtr dst, SDL_Rect* dstrect) => s_SDL_BlitScaled_IntPtr_SDL_Rect_IntPtr_SDL_Rect_t(src, srcrect, dst, dstrect);
 
         private unsafe delegate int SDL_LowerBlitScaled_IntPtr_SDL_Rect_IntPtr_SDL_Rect_t(IntPtr src, SDL_Rect* srcrect, IntPtr dst, SDL_Rect* dstrect);
 
         private static SDL_LowerBlitScaled_IntPtr_SDL_Rect_IntPtr_SDL_Rect_t s_SDL_LowerBlitScaled_IntPtr_SDL_Rect_IntPtr_SDL_Rect_t = __LoadFunction<SDL_LowerBlitScaled_IntPtr_SDL_Rect_IntPtr_SDL_Rect_t>("SDL_LowerBlitScaled");
 
-        public unsafe static int SDL_LowerBlitScaled(IntPtr src, SDL_Rect* srcrect, IntPtr dst, SDL_Rect* dstrect) => s_SDL_LowerBlitScaled_IntPtr_SDL_Rect_IntPtr_SDL_Rect_t(src, srcrect, dst, dstrect);
+        public static unsafe int SDL_LowerBlitScaled(IntPtr src, SDL_Rect* srcrect, IntPtr dst, SDL_Rect* dstrect) => s_SDL_LowerBlitScaled_IntPtr_SDL_Rect_IntPtr_SDL_Rect_t(src, srcrect, dst, dstrect);
 
         private unsafe delegate int SDL_FillRect_IntPtr_SDL_Rect_UInt32_t(IntPtr dst, SDL_Rect* rect, UInt32 color);
 
         private static SDL_FillRect_IntPtr_SDL_Rect_UInt32_t s_SDL_FillRect_IntPtr_SDL_Rect_UInt32_t = __LoadFunction<SDL_FillRect_IntPtr_SDL_Rect_UInt32_t>("SDL_FillRect");
 
-        public unsafe static int SDL_FillRect(IntPtr dst, SDL_Rect* rect, UInt32 color) => s_SDL_FillRect_IntPtr_SDL_Rect_UInt32_t(dst, rect, color);
+        public static unsafe int SDL_FillRect(IntPtr dst, SDL_Rect* rect, UInt32 color) => s_SDL_FillRect_IntPtr_SDL_Rect_UInt32_t(dst, rect, color);
 
         private delegate int SDL_FillRects_IntPtr_IntPtr_int_UInt32_t(IntPtr dst, IntPtr rects, int count, UInt32 color);
 
@@ -222,7 +222,7 @@ namespace SDL2.NetCore3
 
         private static SDL_SoftStretch_SDL_Surface_SDL_Rect_SDL_Surface_SDL_Rect_t s_SDL_SoftStretch_SDL_Surface_SDL_Rect_SDL_Surface_SDL_Rect_t = __LoadFunction<SDL_SoftStretch_SDL_Surface_SDL_Rect_SDL_Surface_SDL_Rect_t>("SDL_SoftStretch");
 
-        public unsafe static int SDL_SoftStretch(IntPtr src, SDL_Rect* srcrect, IntPtr dst, SDL_Rect* dstrect) => s_SDL_SoftStretch_SDL_Surface_SDL_Rect_SDL_Surface_SDL_Rect_t(src, srcrect, dst, dstrect);
+        public static unsafe int SDL_SoftStretch(IntPtr src, SDL_Rect* srcrect, IntPtr dst, SDL_Rect* dstrect) => s_SDL_SoftStretch_SDL_Surface_SDL_Rect_SDL_Surface_SDL_Rect_t(src, srcrect, dst, dstrect);
 
         private delegate IntPtr SDL_ConvertSurface_IntPtr_IntPtr_UInt32_t(IntPtr src, IntPtr fmt, UInt32 flags);
 
@@ -231,11 +231,14 @@ namespace SDL2.NetCore3
         public static IntPtr SDL_ConvertSurface(IntPtr src, IntPtr fmt, UInt32 flags) => s_SDL_ConvertSurface_IntPtr_IntPtr_UInt32_t(src, fmt, flags);
 
         private delegate IntPtr SDL_ConvertSurfaceFormat_IntPtr_UInt32_UInt32_t(IntPtr src, UInt32 fmt, UInt32 flags);
-
         private static SDL_ConvertSurfaceFormat_IntPtr_UInt32_UInt32_t s_SDL_ConvertSurfaceFormat_IntPtr_UInt32_UInt32_t = __LoadFunction<SDL_ConvertSurfaceFormat_IntPtr_UInt32_UInt32_t>("SDL_ConvertSurfaceFormat");
-
         public static IntPtr SDL_ConvertSurfaceFormat(IntPtr src, UInt32 fmt, UInt32 flags) => s_SDL_ConvertSurfaceFormat_IntPtr_UInt32_UInt32_t(src, fmt, flags);
 
+        private delegate int SdlUpperBlit(IntPtr src, IntPtr srcrect, IntPtr dst, IntPtr dstrect);
+        private static readonly SdlUpperBlit s_SdlUpperBlit = __LoadFunction<SdlUpperBlit>("SDL_UpperBlit");
+        public static int SDL_UpperBlit(IntPtr src, IntPtr srcrect, IntPtr dst, IntPtr dstrect) => s_SdlUpperBlit(src, srcrect, dst, dstrect);
+        public static int SDL_BlitSurface(IntPtr src, IntPtr srcrect, IntPtr dst, IntPtr dstrect) => SDL_UpperBlit(src, srcrect, dst, dstrect);
+        
         private static T __LoadFunction<T>(string name) { return Internal.Loader_SDL2.LoadFunction<T>(name); }
 
 #pragma warning disable

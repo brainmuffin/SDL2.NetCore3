@@ -31,6 +31,8 @@ namespace SDL2.NetCore3
         {
             [FieldOffset(0)]
             public UInt32 type;
+            [FieldOffset(0)]
+            public SDL_KeyboardEvent key;
             [FieldOffset(4)]
             public unsafe fixed byte data[52];
 
@@ -177,7 +179,6 @@ namespace SDL2.NetCore3
         [StructLayout(LayoutKind.Sequential)]
         public struct SDL_KeyboardEvent
         {
-
             public UInt32 type;        /**< ::SDL_KEYDOWN or ::SDL_KEYUP */
             public UInt32 timestamp;
             public UInt32 windowID;    /**< The window with keyboard focus, if any */
@@ -198,7 +199,6 @@ namespace SDL2.NetCore3
         [StructLayout(LayoutKind.Sequential)]
         public struct SDL_TextEditingEvent
         {
-
             public UInt32 type;                                /**< ::SDL_TEXTEDITING */
             public UInt32 timestamp;
             public UInt32 windowID;                            /**< The window with keyboard focus, if any */
