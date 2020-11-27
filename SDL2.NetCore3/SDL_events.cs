@@ -32,6 +32,12 @@ namespace SDL2.NetCore3
             [FieldOffset(0)]
             public UInt32 type;
             [FieldOffset(0)]
+            public SDL_CommonEvent common;
+            [FieldOffset(0)]
+            public SDL_DisplayEvent display;
+            [FieldOffset(0)]
+            public SDL_WindowEvent window;
+            [FieldOffset(0)]
             public SDL_KeyboardEvent key;
             [FieldOffset(4)]
             public unsafe fixed byte data[52];
@@ -154,6 +160,20 @@ namespace SDL2.NetCore3
             public unsafe static implicit operator SDL_Event(SDL_CommonEvent e) =>
                *((SDL_Event*)&e);
         }
+        
+        [StructLayout(LayoutKind.Sequential)]
+        public struct SDL_DisplayEvent
+        {
+            public UInt32 type;        /**< ::SDL_DISPLAYEVENT */
+            public UInt32 timestamp;   /**< In milliseconds, populated using SDL_GetTicks() */
+            public UInt32 display;     /**< The associated display index */
+            public byte @event;        /**< ::SDL_DisplayEventID */
+            public byte padding1;
+            public byte padding2;
+            public byte padding3;
+            public Int32 data1;       /**< event dependent data */
+        }
+        
         [StructLayout(LayoutKind.Sequential)]
         public struct SDL_WindowEvent
         {
