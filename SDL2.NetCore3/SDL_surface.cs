@@ -202,6 +202,9 @@ namespace SDL2.NetCore3
 
         public static unsafe int SDL_BlitScaled(IntPtr src, SDL_Rect* srcrect, IntPtr dst, SDL_Rect* dstrect) => s_SDL_BlitScaled_IntPtr_SDL_Rect_IntPtr_SDL_Rect_t(src, srcrect, dst, dstrect);
 
+        public static unsafe int SDL_BlitScaled(IntPtr src, IntPtr dst) =>
+            SDL_BlitScaled(src, null, dst, null);
+
         private unsafe delegate int SDL_LowerBlitScaled_IntPtr_SDL_Rect_IntPtr_SDL_Rect_t(IntPtr src, SDL_Rect* srcrect, IntPtr dst, SDL_Rect* dstrect);
 
         private static SDL_LowerBlitScaled_IntPtr_SDL_Rect_IntPtr_SDL_Rect_t s_SDL_LowerBlitScaled_IntPtr_SDL_Rect_IntPtr_SDL_Rect_t = __LoadFunction<SDL_LowerBlitScaled_IntPtr_SDL_Rect_IntPtr_SDL_Rect_t>("SDL_LowerBlitScaled");
